@@ -368,6 +368,108 @@
   .footer-links a { color: rgba(240,235,224,0.45); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
 
+  /* ── OUR DESTINATIONS DETAIL SECTION ── */
+  .state-destinations { background: var(--cream); padding: 6rem 2rem; }
+  .state-dest-inner { max-width: 1300px; margin: 0 auto; }
+  .state-dest-header { text-align: center; margin-bottom: 5rem; }
+  .state-dest-header .section-label { justify-content: center; }
+
+  /* State tabs */
+  .state-tabs {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
+    margin-bottom: 3.5rem;
+  }
+  .state-tab {
+    padding: 0.6rem 1.5rem;
+    border: 1.5px solid rgba(26,46,26,0.18);
+    border-radius: 50px;
+    background: transparent;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--forest); cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: all 0.25s;
+  }
+  .state-tab:hover { border-color: var(--gold); color: var(--gold); }
+  .state-tab.active { background: var(--forest); color: var(--gold); border-color: var(--forest); }
+
+  /* State panel */
+  .state-panel { display: none; }
+  .state-panel.active { display: block; }
+
+  .state-banner {
+    border-radius: 8px; overflow: hidden; margin-bottom: 2.5rem;
+    position: relative; min-height: 280px;
+    display: flex; align-items: flex-end;
+  }
+  .state-banner-bg {
+    position: absolute; inset: 0;
+  }
+  .state-banner-content {
+    position: relative; z-index: 2;
+    padding: 2.5rem 3rem;
+    width: 100%;
+  }
+  .state-banner-eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.6rem;
+  }
+  .state-banner-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900; color: var(--white); line-height: 1.1;
+    margin-bottom: 0.8rem;
+  }
+  .state-banner-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; color: rgba(240,235,224,0.85);
+    font-style: italic; max-width: 600px; line-height: 1.7; font-weight: 300;
+  }
+  .state-meta {
+    display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;
+  }
+  .state-meta-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; color: rgba(240,235,224,0.75); letter-spacing: 0.05em;
+  }
+  .state-meta-item strong { color: var(--gold); }
+
+  /* Places grid */
+  .places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .place-card {
+    background: var(--white);
+    border-radius: 6px; overflow: hidden;
+    border: 1px solid rgba(26,46,26,0.09);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .place-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(26,46,26,0.12); }
+  .place-card-top {
+    height: 130px; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .place-card-top svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .place-card-icon { font-size: 2.5rem; position: relative; z-index: 1; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+  .place-card-body { padding: 1.2rem 1.4rem; }
+  .place-card-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--forest); margin-bottom: 0.4rem; }
+  .place-card-type { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .place-card-desc { font-size: 0.82rem; color: rgba(26,46,26,0.65); line-height: 1.6; }
+  .place-card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+  .place-tag { font-size: 0.65rem; padding: 0.2rem 0.6rem; background: rgba(26,46,26,0.06); border-radius: 50px; color: rgba(26,46,26,0.6); letter-spacing: 0.05em; }
+
+  /* State info bar */
+  .state-info-bar {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; margin-top: 1.5rem;
+  }
+  .info-bar-item {
+    background: var(--forest); border-radius: 4px; padding: 1.2rem 1.5rem;
+  }
+  .info-bar-item .ibi-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .info-bar-item .ibi-value { font-size: 0.88rem; color: var(--mist); font-weight: 500; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
@@ -398,6 +500,7 @@
   </div>
   <ul class="nav-links">
     <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#our-destinations">Explore States</a></li>
     <li><a href="#packages">Packages</a></li>
     <li><a href="#about">Why Us</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -484,7 +587,7 @@
       <div class="dest-overlay">
         <div class="dest-state">Assam</div>
         <div class="dest-name">Land of the<br>Red River</div>
-        <div class="dest-desc">Kaziranga rhinos, Brahmaputra river cruises, Majuli island, colonial tea estates, and the serenity of Manas National Park.</div>
+        <div class="dest-desc">Kaziranga rhinos, Brahmaputra river cruises, Majuli island, colonial tea estates, and the ancient Ahom heritage of Sivasagar.</div>
       </div>
     </div>
 
@@ -763,6 +866,567 @@
 </div>
 </section>
 
+<!-- OUR DESTINATIONS DETAIL -->
+<section class="state-destinations" id="our-destinations">
+<div class="state-dest-inner">
+  <div class="state-dest-header">
+    <div class="section-label" style="justify-content:center">Explore In Depth</div>
+    <h2 class="section-title">Our <em>Destinations</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(26,46,26,0.65);font-style:italic;margin-top:0.8rem;">Click a state to discover its hidden gems, iconic landmarks, and travel essentials.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="state-tabs">
+    <button class="state-tab active" onclick="showState('assam',this)">🌿 Assam</button>
+    <button class="state-tab" onclick="showState('meghalaya',this)">☁️ Meghalaya</button>
+    <button class="state-tab" onclick="showState('mizoram',this)">🏔️ Mizoram</button>
+    <button class="state-tab" onclick="showState('nagaland',this)">🦁 Nagaland</button>
+    <button class="state-tab" onclick="showState('sikkim',this)">❄️ Sikkim</button>
+    <button class="state-tab" onclick="showState('arunachal',this)">🌄 Arunachal Pradesh</button>
+  </div>
+
+  <!-- ═══ ASSAM ═══ -->
+  <div class="state-panel active" id="panel-assam">
+    <div class="state-banner">
+      <div class="state-banner-bg" style="background:linear-gradient(135deg,#0d2a18 0%,#1a5a30 40%,#2d8a50 70%,#0a1f12 100%);">
+        <svg viewBox="0 0 1300 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;">
+          <path d="M0,180 Q150,100 300,160 Q450,220 600,120 Q750,20 900,100 Q1050,180 1200,80 L1300,60 L1300,280 L0,280Z" fill="white"/>
+          <path d="M0,220 Q200,180 400,210 Q600,240 800,190 Q1000,140 1200,190 L1300,200 L1300,280 L0,280Z" fill="white" opacity="0.5"/>
+          <circle cx="1100" cy="60" r="70" fill="rgba(255,200,50,0.2)"/>
+          <ellipse cx="200" cy="80" rx="120" ry="40" fill="rgba(255,255,255,0.08)"/>
+        </svg>
+      </div>
+      <div class="state-banner-content">
+        <div class="state-banner-eyebrow">State 01 — Assam</div>
+        <h2 class="state-banner-title">Land of the Red River<br>& the Blue Hills</h2>
+        <p class="state-banner-desc">Where the mighty Brahmaputra flows, rhinos roam the tall elephant grass, and the world's finest tea is grown on misty hillsides.</p>
+        <div class="state-meta">
+          <div class="state-meta-item">📍 <strong>Capital:</strong>&nbsp;Dispur</div>
+          <div class="state-meta-item">🌡️ <strong>Best Time:</strong>&nbsp;Nov – Apr</div>
+          <div class="state-meta-item">✈️ <strong>Nearest Airport:</strong>&nbsp;Lokpriya Gopinath Bordoloi, Guwahati</div>
+          <div class="state-meta-item">🗣️ <strong>Language:</strong>&nbsp;Assamese</div>
+        </div>
+      </div>
+    </div>
+    <div class="places-grid">
+      <div class="place-card">
+        <div class="place-card-top">
+          <svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a5a30"/><path d="M0,80 Q80,40 160,70 Q240,100 320,50 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg>
+          <div class="place-card-icon">🦏</div>
+        </div>
+        <div class="place-card-body">
+          <div class="place-card-type">National Park · UNESCO</div>
+          <div class="place-card-name">Kaziranga National Park</div>
+          <p class="place-card-desc">Home to two-thirds of the world's one-horned rhinoceros population. Jeep & elephant safaris through tall elephant grass and marshlands.</p>
+          <div class="place-card-tags"><span class="place-tag">Wildlife Safari</span><span class="place-tag">UNESCO Heritage</span><span class="place-tag">Elephant Ride</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top">
+          <svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2d6b3a"/><path d="M0,60 Q160,20 320,60 L320,130 L0,130Z" fill="rgba(255,255,255,0.12)"/><circle cx="160" cy="50" r="25" fill="rgba(200,168,75,0.3)"/></svg>
+          <div class="place-card-icon">🏝️</div>
+        </div>
+        <div class="place-card-body">
+          <div class="place-card-type">River Island · Cultural</div>
+          <div class="place-card-name">Majuli Island</div>
+          <p class="place-card-desc">The world's largest river island, a cradle of Assamese Neo-Vaishnavite culture. Famous for Sattra monasteries and mask-making traditions.</p>
+          <div class="place-card-tags"><span class="place-tag">Culture</span><span class="place-tag">Monasteries</span><span class="place-tag">Boat Ride</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top">
+          <svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a3a50"/><path d="M0,90 Q80,50 160,80 Q240,110 320,60 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg>
+          <div class="place-card-icon">🛶</div>
+        </div>
+        <div class="place-card-body">
+          <div class="place-card-type">River Cruise</div>
+          <div class="place-card-name">Brahmaputra River Cruise</div>
+          <p class="place-card-desc">Sail on one of the world's mightiest rivers. Watch sunsets over sandbars, spot river dolphins, and experience Assam's riverside life.</p>
+          <div class="place-card-tags"><span class="place-tag">River Cruise</span><span class="place-tag">Sunset</span><span class="place-tag">Dolphins</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top">
+          <svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#3a5a20"/><path d="M0,100 Q80,60 160,90 Q240,120 320,70 L320,130 L0,130Z" fill="rgba(255,255,255,0.12)"/></svg>
+          <div class="place-card-icon">🍃</div>
+        </div>
+        <div class="place-card-body">
+          <div class="place-card-type">Tea Estate · Heritage</div>
+          <div class="place-card-name">Assam Tea Gardens</div>
+          <p class="place-card-desc">Walk through endless rows of emerald tea bushes in Jorhat & Dibrugarh. Tour the factories, pluck leaves, and taste the world-famous Assam brew.</p>
+          <div class="place-card-tags"><span class="place-tag">Tea Tasting</span><span class="place-tag">Heritage Bungalow</span><span class="place-tag">Factory Tour</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top">
+          <svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2a1a50"/><path d="M0,70 Q160,30 320,70 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg>
+          <div class="place-card-icon">🕌</div>
+        </div>
+        <div class="place-card-body">
+          <div class="place-card-type">Temple · Pilgrimage</div>
+          <div class="place-card-name">Kamakhya Temple</div>
+          <p class="place-card-desc">One of the most sacred Shakti temples in India, perched atop Nilachal Hill overlooking Guwahati. A centre of Tantric worship and spiritual energy.</p>
+          <div class="place-card-tags"><span class="place-tag">Pilgrimage</span><span class="place-tag">Shakti Peeth</span><span class="place-tag">Guwahati</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top">
+          <svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#3a2a08"/><path d="M0,80 Q80,40 160,70 Q240,100 320,50 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg>
+          <div class="place-card-icon">🏛️</div>
+        </div>
+        <div class="place-card-body">
+          <div class="place-card-type">Heritage · History</div>
+          <div class="place-card-name">Sivasagar (Sibsagar)</div>
+          <p class="place-card-desc">The ancient capital of the Ahom Kingdom that ruled Assam for 600 years. Explore magnificent Ahom-era monuments — Rang Ghar (Asia's oldest amphitheatre), Kareng Ghar palace, Sivadol, and the vast Sivasagar tank.</p>
+          <div class="place-card-tags"><span class="place-tag">Ahom Kingdom</span><span class="place-tag">Rang Ghar</span><span class="place-tag">Heritage</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top">
+          <svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a3a20"/><path d="M0,60 Q80,30 160,65 Q240,100 320,45 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg>
+          <div class="place-card-icon">🌿</div>
+        </div>
+        <div class="place-card-body">
+          <div class="place-card-type">Hill District · Nature</div>
+          <div class="place-card-name">Dima Hasao (North Cachar Hills)</div>
+          <p class="place-card-desc">Assam's hidden highland gem — lush rolling hills, dramatic waterfalls, and the homeland of the Dimasa people. Famous for Haflong (Assam's only hill station), Jatinga (bird migration mystery), and dense teak forests.</p>
+          <div class="place-card-tags"><span class="place-tag">Hill Station</span><span class="place-tag">Jatinga</span><span class="place-tag">Tribal Culture</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="state-info-bar">
+      <div class="info-bar-item"><div class="ibi-label">Best Time to Visit</div><div class="ibi-value">November – April (cool & dry)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Don't Miss</div><div class="ibi-value">Bihu Festival (April), Dehing Patkai, Sivasagar ruins</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Local Cuisine</div><div class="ibi-value">Masor Tenga, Pork with Bamboo Shoot, Assam Tea</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Permit Required</div><div class="ibi-value">No (Indian Nationals)</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ MEGHALAYA ═══ -->
+  <div class="state-panel" id="panel-meghalaya">
+    <div class="state-banner">
+      <div class="state-banner-bg" style="background:linear-gradient(135deg,#0d1a30 0%,#1a3a6b 40%,#2d5aab 70%,#080f1f 100%);">
+        <svg viewBox="0 0 1300 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;">
+          <path d="M0,100 Q100,40 200,100 Q300,160 400,60 Q500,0 650,80 Q800,160 950,50 Q1100,0 1300,80 L1300,280 L0,280Z" fill="white"/>
+        </svg>
+      </div>
+      <div class="state-banner-content">
+        <div class="state-banner-eyebrow">State 02 — Meghalaya</div>
+        <h2 class="state-banner-title">Abode of Clouds —<br>Where Rain is Home</h2>
+        <p class="state-banner-desc">The wettest place on Earth is also one of the most beautiful. Living root bridges, crystal rivers, thundering waterfalls, and rolling cloud-wrapped hills.</p>
+        <div class="state-meta">
+          <div class="state-meta-item">📍 <strong>Capital:</strong>&nbsp;Shillong</div>
+          <div class="state-meta-item">🌡️ <strong>Best Time:</strong>&nbsp;Oct – May</div>
+          <div class="state-meta-item">✈️ <strong>Nearest Airport:</strong>&nbsp;Shillong Airport / Guwahati</div>
+          <div class="state-meta-item">🗣️ <strong>Language:</strong>&nbsp;Khasi, Garo, English</div>
+        </div>
+      </div>
+    </div>
+    <div class="places-grid">
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a3a6b"/><path d="M0,80 Q80,30 160,70 Q240,110 320,50 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🌉</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Natural Wonder · Trek</div>
+          <div class="place-card-name">Double Decker Living Root Bridge</div>
+          <p class="place-card-desc">Nature's engineering marvel in Nongriat village — ancient ficus tree roots trained over centuries to form walkable bridges across forest streams.</p>
+          <div class="place-card-tags"><span class="place-tag">Trek</span><span class="place-tag">Nature</span><span class="place-tag">UNESCO Nominee</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a4a6b"/><path d="M0,50 Q80,20 160,60 Q240,100 320,40 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">💧</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Waterfall</div>
+          <div class="place-card-name">Nohkalikai Falls</div>
+          <p class="place-card-desc">India's tallest plunge waterfall at 340 metres, near Cherrapunji. The blue-green pool at the base and misty cliffs make for a breathtaking view.</p>
+          <div class="place-card-tags"><span class="place-tag">Waterfall</span><span class="place-tag">Cherrapunji</span><span class="place-tag">Photography</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#0d2a3a"/><path d="M0,90 Q160,40 320,90 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🏞️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">River · Adventure</div>
+          <div class="place-card-name">Dawki (Umngot River)</div>
+          <p class="place-card-desc">Famously transparent river on the Bangladesh border. Boats appear to float on glass — one of India's most photogenic natural attractions.</p>
+          <div class="place-card-tags"><span class="place-tag">Boat Ride</span><span class="place-tag">Crystal River</span><span class="place-tag">Border Town</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2a3a5a"/><path d="M0,70 Q80,40 160,75 Q240,110 320,55 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🌆</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">City · Culture</div>
+          <div class="place-card-name">Shillong — Scotland of the East</div>
+          <p class="place-card-desc">The charming capital with colonial architecture, vibrant music scene, Ward's Lake, and the buzzing Police Bazaar market area.</p>
+          <div class="place-card-tags"><span class="place-tag">City Tour</span><span class="place-tag">Music</span><span class="place-tag">Shopping</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a2a4a"/><path d="M0,100 Q160,50 320,90 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🕳️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Adventure · Cave</div>
+          <div class="place-card-name">Mawsmai & Arwah Caves</div>
+          <p class="place-card-desc">Limestone caves near Cherrapunji with dramatic stalactites and stalagmites. Mawsmai is illuminated for easy exploration, while Arwah needs a guide.</p>
+          <div class="place-card-tags"><span class="place-tag">Caves</span><span class="place-tag">Adventure</span><span class="place-tag">Fossil Beds</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#0d1a3a"/><path d="M0,60 Q80,30 160,60 Q240,90 320,45 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🏊</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Lake · Picnic</div>
+          <div class="place-card-name">Umiam Lake (Barapani)</div>
+          <p class="place-card-desc">A sprawling artificial reservoir 15 km from Shillong surrounded by pine forests. Ideal for boating, kayaking, and soaking in misty mountain views.</p>
+          <div class="place-card-tags"><span class="place-tag">Boating</span><span class="place-tag">Kayaking</span><span class="place-tag">Picnic</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="state-info-bar">
+      <div class="info-bar-item"><div class="ibi-label">Best Time to Visit</div><div class="ibi-value">October – May (avoid heavy monsoon)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Don't Miss</div><div class="ibi-value">Wangala Festival, Mawlynnong (Asia's cleanest village)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Local Cuisine</div><div class="ibi-value">Jadoh, Dohneiiong, Tungrymbai, Rice Beer</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Permit Required</div><div class="ibi-value">No (Indian Nationals)</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ MIZORAM ═══ -->
+  <div class="state-panel" id="panel-mizoram">
+    <div class="state-banner">
+      <div class="state-banner-bg" style="background:linear-gradient(135deg,#2a0d1e 0%,#6b1a40 40%,#8b3a60 70%,#1a0810 100%);">
+        <svg viewBox="0 0 1300 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;">
+          <path d="M0,120 Q200,60 400,100 Q600,140 800,60 Q1000,0 1300,80 L1300,280 L0,280Z" fill="white"/>
+        </svg>
+      </div>
+      <div class="state-banner-content">
+        <div class="state-banner-eyebrow">State 03 — Mizoram</div>
+        <h2 class="state-banner-title">Land of the Blue<br>Mountains & Mizo Soul</h2>
+        <p class="state-banner-desc">A land of warm, music-loving people, rolling highland ranges, bamboo forests, and hidden lakes that seem to belong to another world.</p>
+        <div class="state-meta">
+          <div class="state-meta-item">📍 <strong>Capital:</strong>&nbsp;Aizawl</div>
+          <div class="state-meta-item">🌡️ <strong>Best Time:</strong>&nbsp;Oct – Mar</div>
+          <div class="state-meta-item">✈️ <strong>Nearest Airport:</strong>&nbsp;Lengpui Airport, Aizawl</div>
+          <div class="state-meta-item">🗣️ <strong>Language:</strong>&nbsp;Mizo, English</div>
+        </div>
+      </div>
+    </div>
+    <div class="places-grid">
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#6b1a40"/><path d="M0,50 Q80,20 160,60 Q240,100 320,30 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">⛰️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Peak · Trekking</div>
+          <div class="place-card-name">Phawngpui — Blue Mountain</div>
+          <p class="place-card-desc">Mizoram's highest peak at 2,157 m, draped in rhododendrons and orchids. Offers panoramic views over Myanmar and rolling Mizo highland ranges.</p>
+          <div class="place-card-tags"><span class="place-tag">Trekking</span><span class="place-tag">Highest Peak</span><span class="place-tag">Rhododendrons</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#4a1a30"/><path d="M0,80 Q160,30 320,80 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🏞️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Lake · Nature</div>
+          <div class="place-card-name">Palak Dil Lake</div>
+          <p class="place-card-desc">Mizoram's largest natural lake surrounded by dense jungle. A serene, off-the-beaten-path gem near the Myanmar border teeming with birdlife.</p>
+          <div class="place-card-tags"><span class="place-tag">Lake</span><span class="place-tag">Birdwatching</span><span class="place-tag">Remote</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#3a0d25"/><path d="M0,100 Q80,50 160,80 Q240,110 320,60 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🌆</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">City · Culture</div>
+          <div class="place-card-name">Aizawl — The City of Hills</div>
+          <p class="place-card-desc">One of India's most dramatically positioned cities, clinging to ridges at 1,100 m. Explore Mizoram State Museum, Bara Bazaar, and Durtlang Hills viewpoint.</p>
+          <div class="place-card-tags"><span class="place-tag">City Tour</span><span class="place-tag">Museum</span><span class="place-tag">Viewpoint</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#5a1a3a"/><path d="M0,60 Q80,30 160,70 Q240,110 320,50 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🐘</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Wildlife Sanctuary</div>
+          <div class="place-card-name">Dampa Tiger Reserve</div>
+          <p class="place-card-desc">Mizoram's largest wildlife reserve bordering Bangladesh. Home to hoolock gibbons, sambar deer, leopards, and rare Hump-backed Mahseer fish.</p>
+          <div class="place-card-tags"><span class="place-tag">Wildlife</span><span class="place-tag">Tiger Reserve</span><span class="place-tag">Gibbons</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2a0d1e"/><path d="M0,90 Q160,50 320,85 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🎭</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Culture · Festival</div>
+          <div class="place-card-name">Chapchar Kut Festival</div>
+          <p class="place-card-desc">Mizoram's most colourful spring festival celebrating the completion of jungle clearing. Traditional Cheraw bamboo dance, music, and vibrant Mizo attire.</p>
+          <div class="place-card-tags"><span class="place-tag">Festival</span><span class="place-tag">Bamboo Dance</span><span class="place-tag">March</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#4a0d28"/><path d="M0,70 Q80,40 160,65 Q240,90 320,45 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🌊</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Waterfall · Nature</div>
+          <div class="place-card-name">Vantawng Falls</div>
+          <p class="place-card-desc">The highest waterfall in Mizoram, cascading 229 metres through lush forest. A hidden gem accessible by a short trek from Thenzawl village.</p>
+          <div class="place-card-tags"><span class="place-tag">Waterfall</span><span class="place-tag">Trek</span><span class="place-tag">Hidden Gem</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="state-info-bar">
+      <div class="info-bar-item"><div class="ibi-label">Best Time to Visit</div><div class="ibi-value">October – March (cool, clear skies)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Don't Miss</div><div class="ibi-value">Cheraw Dance, Mizo Handloom weaving villages</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Local Cuisine</div><div class="ibi-value">Bai, Sawhchiar, Mizo Vawksa, Zu (rice beer)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Permit Required</div><div class="ibi-value">Inner Line Permit (ILP) required</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ NAGALAND ═══ -->
+  <div class="state-panel" id="panel-nagaland">
+    <div class="state-banner">
+      <div class="state-banner-bg" style="background:linear-gradient(135deg,#2a1a05 0%,#6b4a10 40%,#ab8020 70%,#1a1000 100%);">
+        <svg viewBox="0 0 1300 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;">
+          <path d="M0,140 Q150,70 300,120 Q450,170 600,80 Q750,0 950,90 Q1100,160 1300,60 L1300,280 L0,280Z" fill="white"/>
+        </svg>
+      </div>
+      <div class="state-banner-content">
+        <div class="state-banner-eyebrow">State 04 — Nagaland</div>
+        <h2 class="state-banner-title">Land of Warriors<br>& Hornbills</h2>
+        <p class="state-banner-desc">A land where ancient warrior traditions meet vibrant festivals. Fierce pride, colourful textiles, and the spectacular Hornbill Festival make Nagaland unforgettable.</p>
+        <div class="state-meta">
+          <div class="state-meta-item">📍 <strong>Capital:</strong>&nbsp;Kohima</div>
+          <div class="state-meta-item">🌡️ <strong>Best Time:</strong>&nbsp;Oct – May</div>
+          <div class="state-meta-item">✈️ <strong>Nearest Airport:</strong>&nbsp;Dimapur Airport</div>
+          <div class="state-meta-item">🗣️ <strong>Language:</strong>&nbsp;Nagamese, English</div>
+        </div>
+      </div>
+    </div>
+    <div class="places-grid">
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#6b4a10"/><path d="M0,80 Q80,40 160,70 Q240,100 320,50 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🎪</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Festival · Culture</div>
+          <div class="place-card-name">Hornbill Festival</div>
+          <p class="place-card-desc">The "Festival of Festivals" held every December at Kisama Heritage Village. All 17 Naga tribes gather to showcase dance, music, food, crafts, and traditional sports.</p>
+          <div class="place-card-tags"><span class="place-tag">Festival</span><span class="place-tag">December</span><span class="place-tag">Tribal Culture</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#3a2a10"/><path d="M0,50 Q80,20 160,60 Q240,100 320,30 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🌺</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Valley · Trekking</div>
+          <div class="place-card-name">Dzükou Valley</div>
+          <p class="place-card-desc">A breathtaking valley of seasonal flowers at 2,440 m on the Nagaland-Manipur border. Famous for the endemic Dzükou lily and rolling meadows of colour.</p>
+          <div class="place-card-tags"><span class="place-tag">Trekking</span><span class="place-tag">Flowers</span><span class="place-tag">Camping</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2a1a05"/><path d="M0,100 Q160,50 320,90 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">⚔️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Memorial · History</div>
+          <div class="place-card-name">Kohima War Cemetery</div>
+          <p class="place-card-desc">A poignant memorial to the Allied soldiers who fought the pivotal Battle of Kohima (1944) — described as the "Stalingrad of the East" and a turning point of WWII.</p>
+          <div class="place-card-tags"><span class="place-tag">WWII History</span><span class="place-tag">Memorial</span><span class="place-tag">Kohima</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#5a3a10"/><path d="M0,70 Q80,40 160,75 Q240,110 320,55 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🏘️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Village · Heritage</div>
+          <div class="place-card-name">Khonoma Green Village</div>
+          <p class="place-card-desc">India's first "green" village and stronghold of Angami Naga warriors. Ancient terrace paddy fields, traditional morung (men's house), and rich biodiversity.</p>
+          <div class="place-card-tags"><span class="place-tag">Eco-Village</span><span class="place-tag">Birdwatching</span><span class="place-tag">Terraced Fields</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#4a2a08"/><path d="M0,90 Q80,60 160,85 Q240,110 320,65 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🏔️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Peak · Adventure</div>
+          <div class="place-card-name">Saramati Peak</div>
+          <p class="place-card-desc">Nagaland's highest peak at 3,840 m on the Myanmar border. Trekkers are rewarded with views of the Brahmaputra plains and Himalayan ranges on clear days.</p>
+          <div class="place-card-tags"><span class="place-tag">Highest Peak</span><span class="place-tag">Trek</span><span class="place-tag">Myanmar Border</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#3a2008"/><path d="M0,60 Q160,20 320,65 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🎨</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Craft · Culture</div>
+          <div class="place-card-name">Naga Shawls & Handicrafts</div>
+          <p class="place-card-desc">Each Naga tribe has a unique shawl that signifies warrior status and identity. Browse tribal markets in Kohima and Dimapur for authentic textiles, beadwork, and woodcraft.</p>
+          <div class="place-card-tags"><span class="place-tag">Shopping</span><span class="place-tag">Textiles</span><span class="place-tag">Tribal Art</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="state-info-bar">
+      <div class="info-bar-item"><div class="ibi-label">Best Time to Visit</div><div class="ibi-value">October – May (Hornbill: Dec 1–10)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Don't Miss</div><div class="ibi-value">Kisama Heritage Village, Touphema Tourist Village</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Local Cuisine</div><div class="ibi-value">Smoked Pork, Galho, Axone (Fermented Soybean), Anishi</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Permit Required</div><div class="ibi-value">Inner Line Permit (ILP) required</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ SIKKIM ═══ -->
+  <div class="state-panel" id="panel-sikkim">
+    <div class="state-banner">
+      <div class="state-banner-bg" style="background:linear-gradient(135deg,#0d0d2a 0%,#2a2a8b 40%,#4a4aab 70%,#080820 100%);">
+        <svg viewBox="0 0 1300 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.25;">
+          <path d="M0,160 Q100,80 200,130 Q300,180 400,80 Q500,0 650,70 Q800,140 950,40 Q1100,0 1300,80 L1300,280 L0,280Z" fill="white"/>
+          <circle cx="1000" cy="50" r="50" fill="rgba(200,200,255,0.2)"/>
+        </svg>
+      </div>
+      <div class="state-banner-content">
+        <div class="state-banner-eyebrow">State 05 — Sikkim</div>
+        <h2 class="state-banner-title">Kingdom of Snows<br>& Monasteries</h2>
+        <p class="state-banner-desc">India's smallest state packs the mightiest punch — glacial lakes, Buddhist monasteries, the third-highest peak on Earth, and cascading rhododendron forests.</p>
+        <div class="state-meta">
+          <div class="state-meta-item">📍 <strong>Capital:</strong>&nbsp;Gangtok</div>
+          <div class="state-meta-item">🌡️ <strong>Best Time:</strong>&nbsp;Mar–May, Oct–Dec</div>
+          <div class="state-meta-item">✈️ <strong>Nearest Airport:</strong>&nbsp;Pakyong Airport / Bagdogra (NJP)</div>
+          <div class="state-meta-item">🗣️ <strong>Language:</strong>&nbsp;Nepali, Sikkimese, English</div>
+        </div>
+      </div>
+    </div>
+    <div class="places-grid">
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2a2a8b"/><path d="M0,80 Q80,30 160,70 Q240,110 320,40 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🏔️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Mountain · Viewpoint</div>
+          <div class="place-card-name">Kangchenjunga Views</div>
+          <p class="place-card-desc">The world's third-highest peak (8,586 m) dominates Sikkim's skyline. Best viewed from Pelling, Dzongri, and Sandakphu at golden sunrise.</p>
+          <div class="place-card-tags"><span class="place-tag">Sunrise View</span><span class="place-tag">Photography</span><span class="place-tag">Trek</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a1a6b"/><path d="M0,100 Q160,40 320,95 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🏵️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Lake · High Altitude</div>
+          <div class="place-card-name">Tsomgo (Changu) Lake</div>
+          <p class="place-card-desc">A sacred glacial lake at 3,753 m near the Chinese border. The lake changes colour with the seasons and is flanked by snow-capped peaks.</p>
+          <div class="place-card-tags"><span class="place-tag">Glacial Lake</span><span class="place-tag">12,400 ft</span><span class="place-tag">Sacred</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#3a3a9b"/><path d="M0,60 Q80,30 160,65 Q240,100 320,45 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🛕</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Monastery · Spiritual</div>
+          <div class="place-card-name">Rumtek Monastery</div>
+          <p class="place-card-desc">The largest monastery in Sikkim and one of the most important Kagyu Buddhist centres in the world. Contains rare golden stupa relics and ancient scriptures.</p>
+          <div class="place-card-tags"><span class="place-tag">Buddhism</span><span class="place-tag">Kagyu</span><span class="place-tag">Spiritual</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#0d0d4a"/><path d="M0,80 Q80,50 160,75 Q240,100 320,55 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🌸</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Valley · Flowers</div>
+          <div class="place-card-name">Yumthang Valley</div>
+          <p class="place-card-desc">North Sikkim's "Valley of Flowers" at 3,564 m — a stunning carpet of rhododendrons, primulas, and poppies from March to May, with a hot spring nearby.</p>
+          <div class="place-card-tags"><span class="place-tag">Rhododendrons</span><span class="place-tag">Hot Springs</span><span class="place-tag">North Sikkim</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2a2a7b"/><path d="M0,90 Q160,45 320,88 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🎋</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Town · Gateway</div>
+          <div class="place-card-name">Gangtok</div>
+          <p class="place-card-desc">Sikkim's lively capital on a ridge at 1,650 m. Visit MG Marg, Enchey Monastery, the Flower Show, Namgyal Institute of Tibetology, and panoramic cable car.</p>
+          <div class="place-card-tags"><span class="place-tag">Cable Car</span><span class="place-tag">MG Marg</span><span class="place-tag">Tibetology</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a1a5a"/><path d="M0,70 Q80,40 160,68 Q240,96 320,46 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🚧</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Pass · High Altitude</div>
+          <div class="place-card-name">Nathula Pass</div>
+          <p class="place-card-desc">A historic mountain pass at 4,310 m on the India–China border, part of the ancient Silk Road trade route. One of the highest motorable roads in the world.</p>
+          <div class="place-card-tags"><span class="place-tag">14,140 ft</span><span class="place-tag">China Border</span><span class="place-tag">Silk Road</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="state-info-bar">
+      <div class="info-bar-item"><div class="ibi-label">Best Time to Visit</div><div class="ibi-value">Mar–May (flowers), Oct–Dec (clear skies)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Don't Miss</div><div class="ibi-value">Gurudongmar Lake, Pelling, Ravangla Buddha Park</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Local Cuisine</div><div class="ibi-value">Momos, Thukpa, Gundruk, Chhurpi, Chang (millet beer)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Permit Required</div><div class="ibi-value">Protected Area Permit for North Sikkim</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ ARUNACHAL PRADESH ═══ -->
+  <div class="state-panel" id="panel-arunachal">
+    <div class="state-banner">
+      <div class="state-banner-bg" style="background:linear-gradient(135deg,#0d2a0d 0%,#2a6b2a 40%,#4aab4a 70%,#081808 100%);">
+        <svg viewBox="0 0 1300 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.2;">
+          <path d="M0,180 Q100,90 200,150 Q300,210 450,100 Q600,0 800,90 Q1000,180 1150,70 Q1250,10 1300,60 L1300,280 L0,280Z" fill="white"/>
+          <circle cx="1150" cy="55" r="60" fill="rgba(255,220,80,0.2)"/>
+        </svg>
+      </div>
+      <div class="state-banner-content">
+        <div class="state-banner-eyebrow">State 06 — Arunachal Pradesh</div>
+        <h2 class="state-banner-title">Land of the<br>Dawn-Lit Mountains</h2>
+        <p class="state-banner-desc">India's easternmost frontier where the Himalayas meet the tropics. Ancient Buddhist monasteries, tribal kingdoms, and the Brahmaputra gorge — raw and magnificent.</p>
+        <div class="state-meta">
+          <div class="state-meta-item">📍 <strong>Capital:</strong>&nbsp;Itanagar</div>
+          <div class="state-meta-item">🌡️ <strong>Best Time:</strong>&nbsp;Oct – Apr</div>
+          <div class="state-meta-item">✈️ <strong>Nearest Airport:</strong>&nbsp;Hollongi (Itanagar) / Tezpur</div>
+          <div class="state-meta-item">🗣️ <strong>Language:</strong>&nbsp;Nyishi, Adi, Bengali, English</div>
+        </div>
+      </div>
+    </div>
+    <div class="places-grid">
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a5a1a"/><path d="M0,60 Q80,20 160,55 Q240,90 320,35 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🛕</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Monastery · Spiritual</div>
+          <div class="place-card-name">Tawang Monastery</div>
+          <p class="place-card-desc">Asia's largest Buddhist monastery at 3,048 m, founded in the 17th century. Houses over 450 monks and contains a 28-foot golden statue of Lord Buddha.</p>
+          <div class="place-card-tags"><span class="place-tag">Asia's Largest</span><span class="place-tag">Buddhism</span><span class="place-tag">10,000 ft</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2a6b20"/><path d="M0,100 Q80,50 160,80 Q240,110 320,55 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🏔️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Mountain Pass</div>
+          <div class="place-card-name">Sela Pass</div>
+          <p class="place-card-desc">A high-altitude pass at 4,170 m connecting Tawang to the rest of Arunachal. Flanked by Sela Lake and snow-covered peaks with a sacred Buddhist shrine at the top.</p>
+          <div class="place-card-tags"><span class="place-tag">13,700 ft</span><span class="place-tag">Snow</span><span class="place-tag">Sacred Lake</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a4a15"/><path d="M0,80 Q80,40 160,70 Q240,100 320,50 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🌾</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Valley · Culture</div>
+          <div class="place-card-name">Ziro Valley</div>
+          <p class="place-card-desc">A UNESCO World Heritage nominee — a serene valley of the Apatani tribe known for their unique facial tattoos, sustainable paddy-cum-fish cultivation, and the Ziro Music Festival.</p>
+          <div class="place-card-tags"><span class="place-tag">Apatani Tribe</span><span class="place-tag">Music Festival</span><span class="place-tag">UNESCO Nominee</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#0d3a10"/><path d="M0,90 Q160,45 320,88 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">💧</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Waterfall</div>
+          <div class="place-card-name">Nuranang (Jung) Waterfall</div>
+          <p class="place-card-desc">A roaring 100-metre waterfall in the Tawang district, made famous by Bollywood. Surrounded by coniferous forests with a footbridge offering spectacular views.</p>
+          <div class="place-card-tags"><span class="place-tag">Waterfall</span><span class="place-tag">Tawang</span><span class="place-tag">Scenic Drive</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#2a5a18"/><path d="M0,70 Q80,40 160,68 Q240,96 320,46 L320,130 L0,130Z" fill="rgba(255,255,255,0.15)"/></svg><div class="place-card-icon">🐯</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">National Park · Wildlife</div>
+          <div class="place-card-name">Namdapha National Park</div>
+          <p class="place-card-desc">India's third-largest national park — the only park to house all four big cats (tiger, leopard, clouded leopard, snow leopard). Also famous for hoolock gibbons.</p>
+          <div class="place-card-tags"><span class="place-tag">Four Big Cats</span><span class="place-tag">Gibbons</span><span class="place-tag">Jungle Camp</span></div>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-card-top"><svg viewBox="0 0 320 130"><rect width="320" height="130" fill="#1a3a10"/><path d="M0,60 Q80,30 160,58 Q240,86 320,40 L320,130 L0,130Z" fill="rgba(255,255,255,0.18)"/></svg><div class="place-card-icon">🏞️</div></div>
+        <div class="place-card-body">
+          <div class="place-card-type">Gorge · Adventure</div>
+          <div class="place-card-name">Brahmaputra Gorge, Pasighat</div>
+          <p class="place-card-desc">Pasighat, Arunachal's oldest town, sits at the foot of the Brahmaputra gorge. Thrilling river rafting, angling, and views of the river bursting through Himalayan gates.</p>
+          <div class="place-card-tags"><span class="place-tag">River Rafting</span><span class="place-tag">Angling</span><span class="place-tag">Oldest Town</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="state-info-bar">
+      <div class="info-bar-item"><div class="ibi-label">Best Time to Visit</div><div class="ibi-value">October – April (avoid June–Aug)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Don't Miss</div><div class="ibi-value">Mechuka Valley, Bomdila, Sangti Valley, Dirang</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Local Cuisine</div><div class="ibi-value">Bamboo Shoot Curry, Pika Pila, Thukpa, Apong (rice beer)</div></div>
+      <div class="info-bar-item"><div class="ibi-label">Permit Required</div><div class="ibi-value">Inner Line Permit (ILP) — mandatory for all</div></div>
+    </div>
+  </div>
+
+</div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="testimonials">
 <div class="testimonials-inner">
@@ -829,14 +1493,14 @@
         <div class="info-icon">📞</div>
         <div class="info-text">
           <p>Phone / WhatsApp</p>
-          <p>+91 94350 XXXXX</p>
+          <p>+91 88225 57251 &nbsp;|&nbsp; +91 70863 09890</p>
         </div>
       </div>
       <div class="info-item">
         <div class="info-icon">✉️</div>
         <div class="info-text">
           <p>Email</p>
-          <p>hello@dhansiriinsight.com</p>
+          <p><a href="mailto:dhansiriinsight@gmail.com" style="color:rgba(240,235,224,0.75);text-decoration:none;">dhansiriinsight@gmail.com</a></p>
         </div>
       </div>
       <div class="info-item">
@@ -918,6 +1582,24 @@
 </footer>
 
 <script>
+  // State destination tabs
+  function showState(state, btn) {
+    document.querySelectorAll('.state-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.state-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + state).classList.add('active');
+    btn.classList.add('active');
+    // Re-trigger scroll animations for new panel
+    document.querySelectorAll('#panel-' + state + ' .place-card').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, i * 80);
+    });
+  }
+
   // Smooth reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
