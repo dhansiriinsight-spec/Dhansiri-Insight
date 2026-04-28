@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhansiri Insight – Northeast India Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a2e1a;
+    --deep: #0d1f0d;
+    --gold: #c8a84b;
+    --amber: #e8c068;
+    --mist: #f0ebe0;
+    --cream: #faf6ee;
+    --terracotta: #b05a2f;
+    --sage: #4a6741;
+    --river: #2d5a6b;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--forest);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(13,31,13,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,168,75,0.2);
+    transition: padding 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .nav-logo span { display: block; font-size: 0.65rem; font-weight: 300; color: var(--mist); letter-spacing: 0.25em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; margin-top: 2px; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { color: var(--mist); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; opacity: 0.85; transition: opacity 0.2s, color 0.2s; }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--deep);
+    padding: 0.6rem 1.6rem; border-radius: 2px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--amber); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    background: var(--deep);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 40%, rgba(42,90,60,0.55) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 80% 70%, rgba(45,90,107,0.4) 0%, transparent 65%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1f0d 0%, #0a1808 100%);
+  }
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.035;
+    background-image: repeating-linear-gradient(60deg, #c8a84b 0, #c8a84b 1px, transparent 0, transparent 50%),
+                      repeating-linear-gradient(120deg, #c8a84b 0, #c8a84b 1px, transparent 0, transparent 50%);
+    background-size: 40px 40px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 2rem;
+    max-width: 900px;
+    animation: heroFadeIn 1.2s ease forwards;
+  }
+  @keyframes heroFadeIn { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: translateY(0); } }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.8rem; font-weight: 500;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--gold); opacity: 0.6;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 8vw, 7rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 0.3rem;
+  }
+  .hero-title em { color: var(--gold); font-style: italic; }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: rgba(240,235,224,0.75);
+    font-style: italic;
+    margin: 1.2rem 0 2.5rem;
+    font-weight: 300;
+  }
+  .hero-states {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
+    margin-bottom: 3rem;
+  }
+  .hero-state {
+    padding: 0.35rem 1rem; border: 1px solid rgba(200,168,75,0.35);
+    border-radius: 50px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--mist); background: rgba(200,168,75,0.08);
+    transition: all 0.25s;
+  }
+  .hero-state:hover { border-color: var(--gold); background: rgba(200,168,75,0.18); color: var(--gold); }
+  .hero-btns { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 1rem 2.6rem; background: var(--gold); color: var(--deep);
+    font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px; transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--amber); transform: translateY(-2px); }
+  .btn-outline {
+    padding: 1rem 2.6rem; border: 1px solid rgba(240,235,224,0.4); color: var(--mist);
+    font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px; transition: border-color 0.2s, transform 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(240,235,224,0.4); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, rgba(200,168,75,0.6), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 2rem; }
+  .section-label {
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem; font-weight: 600;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-label::after { content:''; flex:1; max-width:50px; height:1px; background:var(--gold); opacity:0.5; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900; line-height: 1.1;
+    color: var(--forest);
+  }
+  .section-title em { font-style: italic; color: var(--sage); }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    background: var(--forest);
+    padding: 4rem 3rem;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4rem;
+  }
+  .about-stat { text-align: center; }
+  .about-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; font-weight: 900; color: var(--gold); line-height: 1;
+  }
+  .about-stat .label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mist); opacity: 0.7; margin-top: 0.3rem; }
+  .about-divider { width: 1px; height: 60px; background: rgba(200,168,75,0.25); }
+
+  /* ── DESTINATIONS ── */
+  .destinations { background: var(--cream); max-width: 1300px; margin: 0 auto; }
+  .destinations-header { text-align: center; margin-bottom: 3.5rem; }
+  .dest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1.2rem;
+  }
+  .dest-card {
+    position: relative; overflow: hidden; border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .dest-card:hover { transform: scale(1.015); }
+  .dest-card.large { grid-column: span 2; grid-row: span 2; }
+  .dest-card .card-img {
+    width: 100%; height: 100%; min-height: 220px;
+    object-fit: cover; display: block;
+  }
+  .dest-card.large .card-img { min-height: 440px; }
+  .dest-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(13,31,13,0.9) 0%, rgba(13,31,13,0.2) 50%, transparent 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 2rem 1.8rem;
+    transition: background 0.3s;
+  }
+  .dest-card:hover .dest-overlay { background: linear-gradient(to top, rgba(13,31,13,0.95) 0%, rgba(13,31,13,0.35) 60%, transparent 100%); }
+  .dest-state { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .dest-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--white); line-height: 1.1; }
+  .dest-card.large .dest-name { font-size: 2.2rem; }
+  .dest-desc { font-size: 0.82rem; color: rgba(240,235,224,0.8); margin-top: 0.5rem; line-height: 1.55; max-height: 0; overflow: hidden; transition: max-height 0.4s, margin-top 0.3s; }
+  .dest-card:hover .dest-desc { max-height: 80px; }
+
+  /* Gradient placeholder for cards */
+  .dest-bg {
+    width:100%; min-height:220px; display:block;
+    position: relative;
+  }
+  .dest-card.large .dest-bg { min-height: 440px; }
+  .bg-assam { background: linear-gradient(135deg, #1a4a2e 0%, #2d7a4a 40%, #4a9a60 70%, #1a3020 100%); }
+  .bg-meghalaya { background: linear-gradient(135deg, #1a2a40 0%, #2d5a8b 40%, #4a7aab 70%, #0d1a30 100%); }
+  .bg-mizoram { background: linear-gradient(135deg, #3a1a2e 0%, #6b3a5a 40%, #8b5a7a 70%, #2a0d1e 100%); }
+  .bg-nagaland { background: linear-gradient(135deg, #3a2a10 0%, #8b6a20 40%, #ab8a40 70%, #2a1a05 100%); }
+  .bg-sikkim { background: linear-gradient(135deg, #1a1a3a 0%, #3a3a8b 40%, #5a5aab 70%, #0d0d2a 100%); }
+  .bg-arunachal { background: linear-gradient(135deg, #1a3a1a 0%, #3a8b3a 40%, #5aab5a 70%, #0d2a0d 100%); }
+  
+  /* SVG landscape overlays on cards */
+  .card-landscape {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    opacity: 0.35;
+  }
+
+  /* ── WHY DHANSIRI ── */
+  .why { background: var(--forest); color: var(--mist); }
+  .why-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .why .section-title { color: var(--white); }
+  .why .section-title em { color: var(--gold); }
+  .why-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.75; color: rgba(240,235,224,0.8); margin: 1.5rem 0 2.5rem; font-weight: 300; }
+  .why-features { display: grid; gap: 1.8rem; }
+  .why-feature { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .why-icon { width: 44px; height: 44px; background: rgba(200,168,75,0.12); border: 1px solid rgba(200,168,75,0.3); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem; }
+  .why-feature-text h4 { font-size: 0.9rem; font-weight: 600; color: var(--gold); margin-bottom: 0.3rem; letter-spacing: 0.05em; }
+  .why-feature-text p { font-size: 0.83rem; color: rgba(240,235,224,0.65); line-height: 1.6; }
+  .why-visual { position: relative; }
+  .why-card-main {
+    background: linear-gradient(145deg, rgba(42,90,60,0.5), rgba(45,90,107,0.4));
+    border: 1px solid rgba(200,168,75,0.2);
+    border-radius: 6px; padding: 2.5rem;
+    backdrop-filter: blur(8px);
+  }
+  .why-card-main h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--white); margin-bottom: 1rem; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+  .tag { padding: 0.3rem 0.9rem; background: rgba(200,168,75,0.1); border: 1px solid rgba(200,168,75,0.25); border-radius: 50px; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--gold); text-transform: uppercase; }
+  .floating-badge {
+    position: absolute; top: -20px; right: -20px;
+    background: var(--gold); color: var(--deep);
+    width: 90px; height: 90px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-align: center;
+    line-height: 1.3;
+    box-shadow: 0 8px 30px rgba(200,168,75,0.4);
+    animation: float 4s ease-in-out infinite;
+  }
+  .floating-badge .big { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; display: block; }
+  @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+
+  /* ── PACKAGES ── */
+  .packages { max-width: 1200px; margin: 0 auto; }
+  .packages-header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; gap: 1rem; }
+  .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .pkg-card {
+    background: var(--white);
+    border-radius: 6px; overflow: hidden;
+    border: 1px solid rgba(26,46,26,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .pkg-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,46,26,0.12); }
+  .pkg-header { padding: 1.8rem; position: relative; }
+  .pkg-assam { background: linear-gradient(135deg, #1a4a2e, #2d7a4a); }
+  .pkg-meghalaya { background: linear-gradient(135deg, #1a2a40, #2d5a8b); }
+  .pkg-arunachal { background: linear-gradient(135deg, #1a3a1a, #3a8b3a); }
+  .pkg-nagaland { background: linear-gradient(135deg, #3a2a10, #8b6a20); }
+  .pkg-sikkim { background: linear-gradient(135deg, #1a1a3a, #3a3a8b); }
+  .pkg-mizoram { background: linear-gradient(135deg, #3a1a2e, #6b3a5a); }
+  .pkg-duration {
+    position: absolute; top: 1.2rem; right: 1.2rem;
+    background: rgba(200,168,75,0.9); color: var(--deep);
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.3rem 0.8rem; border-radius: 2px;
+  }
+  .pkg-state { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(200,168,75,0.9); margin-bottom: 0.4rem; }
+  .pkg-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); line-height: 1.2; }
+  .pkg-body { padding: 1.5rem 1.8rem; }
+  .pkg-highlights { list-style: none; margin-bottom: 1.3rem; }
+  .pkg-highlights li { font-size: 0.82rem; color: rgba(26,46,26,0.75); padding: 0.3rem 0; display: flex; align-items: center; gap: 0.6rem; }
+  .pkg-highlights li::before { content: '→'; color: var(--gold); font-weight: 700; }
+  .pkg-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid rgba(26,46,26,0.08); }
+  .pkg-price { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--forest); }
+  .pkg-price span { font-size: 0.72rem; font-family: 'DM Sans', sans-serif; color: rgba(26,46,26,0.5); font-weight: 400; }
+  .btn-pkg { padding: 0.55rem 1.4rem; background: var(--forest); color: var(--white); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; border-radius: 2px; text-decoration: none; transition: background 0.2s; }
+  .btn-pkg:hover { background: var(--sage); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--mist); }
+  .testimonials-inner { max-width: 1100px; margin: 0 auto; }
+  .testi-header { text-align: center; margin-bottom: 3.5rem; }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .testi-card {
+    background: var(--white); border-radius: 6px; padding: 2rem;
+    border: 1px solid rgba(26,46,26,0.08);
+    position: relative;
+  }
+  .testi-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; color: var(--gold); opacity: 0.3;
+    line-height: 0.8; margin-bottom: 0.5rem;
+  }
+  .testi-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.7; color: var(--forest); font-style: italic; margin-bottom: 1.5rem; }
+  .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+  .testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--river)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+  .testi-name { font-weight: 600; font-size: 0.88rem; color: var(--forest); }
+  .testi-place { font-size: 0.75rem; color: rgba(26,46,26,0.5); }
+  .testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.3rem; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--deep); }
+  .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact .section-title { color: var(--white); }
+  .contact .section-title em { color: var(--gold); }
+  .contact-info { margin-top: 2rem; display: grid; gap: 1.5rem; }
+  .info-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .info-icon { width: 38px; height: 38px; background: rgba(200,168,75,0.1); border: 1px solid rgba(200,168,75,0.25); border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .info-text p:first-child { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+  .info-text p:last-child { color: rgba(240,235,224,0.75); font-size: 0.9rem; }
+  .contact-form { display: grid; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(200,168,75,0.8); }
+  .form-group input, .form-group select, .form-group textarea {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(200,168,75,0.2);
+    border-radius: 3px; padding: 0.8rem 1rem;
+    color: var(--mist); font-size: 0.88rem; font-family: 'DM Sans', sans-serif;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--deep); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .btn-submit {
+    background: var(--gold); color: var(--deep);
+    padding: 1rem 2.5rem; font-weight: 700; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: none; border-radius: 2px; cursor: pointer;
+    transition: background 0.2s; width: 100%;
+  }
+  .btn-submit:hover { background: var(--amber); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060f06;
+    padding: 3rem;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;
+    border-top: 1px solid rgba(200,168,75,0.15);
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: var(--gold); }
+  .footer-logo span { display: block; font-size: 0.6rem; letter-spacing: 0.25em; color: rgba(240,235,224,0.4); font-family: 'DM Sans', sans-serif; text-transform: uppercase; margin-top: 2px; }
+  .footer-copy { font-size: 0.78rem; color: rgba(240,235,224,0.35); }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { color: rgba(240,235,224,0.45); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .dest-grid { grid-template-columns: 1fr 1fr; }
+    .dest-card.large { grid-column: span 2; }
+    .why-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .why-visual { display: none; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 4rem 1.2rem; }
+    .dest-grid { grid-template-columns: 1fr; }
+    .dest-card.large { grid-column: span 1; }
+    .about-strip { gap: 2rem; padding: 3rem 1.5rem; }
+    .about-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    Dhansiri Insight
+    <span>Northeast India Travel</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#about">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Northeast India's Premier Travel Guide</div>
+    <h1 class="hero-title">
+      Where Wilderness<br>Meets <em>Wonder</em>
+    </h1>
+    <p class="hero-subtitle">Crafting extraordinary journeys through the mystical lands of Northeast India — one unforgettable experience at a time.</p>
+    <div class="hero-states">
+      <span class="hero-state">🌿 Assam</span>
+      <span class="hero-state">☁️ Meghalaya</span>
+      <span class="hero-state">🏔️ Mizoram</span>
+      <span class="hero-state">🦁 Nagaland</span>
+      <span class="hero-state">❄️ Sikkim</span>
+      <span class="hero-state">🌄 Arunachal Pradesh</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#packages" class="btn-primary">Explore Packages</a>
+      <a href="#destinations" class="btn-outline">Our Destinations</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="about-strip">
+  <div class="about-stat">
+    <div class="num">6</div>
+    <div class="label">States Covered</div>
+  </div>
+  <div class="about-divider"></div>
+  <div class="about-stat">
+    <div class="num">200+</div>
+    <div class="label">Destinations</div>
+  </div>
+  <div class="about-divider"></div>
+  <div class="about-stat">
+    <div class="num">5000+</div>
+    <div class="label">Happy Travellers</div>
+  </div>
+  <div class="about-divider"></div>
+  <div class="about-stat">
+    <div class="num">10+</div>
+    <div class="label">Years of Experience</div>
+  </div>
+  <div class="about-divider"></div>
+  <div class="about-stat">
+    <div class="num">98%</div>
+    <div class="label">Satisfaction Rate</div>
+  </div>
+</div>
+
+<!-- DESTINATIONS -->
+<section id="destinations">
+<div class="destinations">
+  <div class="destinations-header">
+    <div class="section-label">Our Destinations</div>
+    <h2 class="section-title">Six States,<br><em>Infinite Stories</em></h2>
+  </div>
+  <div class="dest-grid">
+
+    <!-- Assam – large -->
+    <div class="dest-card large">
+      <div class="dest-bg bg-assam">
+        <svg class="card-landscape" viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,300 Q100,220 200,280 Q300,340 400,240 Q500,140 600,220 Q700,300 800,200 L800,440 L0,440Z" fill="rgba(255,255,255,0.12)"/>
+          <path d="M0,360 Q150,300 300,340 Q450,380 600,300 Q700,260 800,310 L800,440 L0,440Z" fill="rgba(255,255,255,0.08)"/>
+          <circle cx="680" cy="80" r="50" fill="rgba(255,200,50,0.15)"/>
+          <ellipse cx="100" cy="180" rx="80" ry="30" fill="rgba(255,255,255,0.06)"/>
+        </svg>
+      </div>
+      <div class="dest-overlay">
+        <div class="dest-state">Assam</div>
+        <div class="dest-name">Land of the<br>Red River</div>
+        <div class="dest-desc">Kaziranga rhinos, Brahmaputra river cruises, Majuli island, colonial tea estates, and the serenity of Manas National Park.</div>
+      </div>
+    </div>
+
+    <!-- Meghalaya -->
+    <div class="dest-card">
+      <div class="dest-bg bg-meghalaya">
+        <svg class="card-landscape" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,120 Q60,80 120,110 Q180,140 240,90 Q300,40 360,80 Q380,90 400,70 L400,220 L0,220Z" fill="rgba(255,255,255,0.15)"/>
+          <path d="M0,160 Q100,140 200,155 Q300,170 400,140 L400,220 L0,220Z" fill="rgba(255,255,255,0.08)"/>
+        </svg>
+      </div>
+      <div class="dest-overlay">
+        <div class="dest-state">Meghalaya</div>
+        <div class="dest-name">Abode of Clouds</div>
+        <div class="dest-desc">Living root bridges, Cherrapunji, Dawki river and Shillong's rolling hills.</div>
+      </div>
+    </div>
+
+    <!-- Nagaland -->
+    <div class="dest-card">
+      <div class="dest-bg bg-nagaland">
+        <svg class="card-landscape" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,100 Q50,60 100,90 Q150,120 200,70 Q280,20 360,60 Q380,70 400,50 L400,220 L0,220Z" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+      </div>
+      <div class="dest-overlay">
+        <div class="dest-state">Nagaland</div>
+        <div class="dest-name">Land of Warriors</div>
+        <div class="dest-desc">Hornbill Festival, tribal heritage, Dzükou Valley trekking and ancient Naga villages.</div>
+      </div>
+    </div>
+
+    <!-- Sikkim -->
+    <div class="dest-card">
+      <div class="dest-bg bg-sikkim">
+        <svg class="card-landscape" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,150 Q50,80 100,120 Q150,160 200,80 Q250,0 320,60 Q370,100 400,40 L400,220 L0,220Z" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="300" cy="50" r="30" fill="rgba(255,255,255,0.1)"/>
+        </svg>
+      </div>
+      <div class="dest-overlay">
+        <div class="dest-state">Sikkim</div>
+        <div class="dest-name">Kingdom of<br>Mountains</div>
+        <div class="dest-desc">Kangchenjunga views, Gangtok, Nathula Pass, Tsomgo Lake and Buddhist monasteries.</div>
+      </div>
+    </div>
+
+    <!-- Arunachal -->
+    <div class="dest-card">
+      <div class="dest-bg bg-arunachal">
+        <svg class="card-landscape" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,130 Q80,70 160,110 Q240,150 320,90 Q360,70 400,60 L400,220 L0,220Z" fill="rgba(255,255,255,0.18)"/>
+        </svg>
+      </div>
+      <div class="dest-overlay">
+        <div class="dest-state">Arunachal Pradesh</div>
+        <div class="dest-name">Land of the<br>Dawn-Lit Hills</div>
+        <div class="dest-desc">Tawang Monastery, Ziro Valley, Sela Pass and the pristine Brahmaputra gorge.</div>
+      </div>
+    </div>
+
+    <!-- Mizoram -->
+    <div class="dest-card">
+      <div class="dest-bg bg-mizoram">
+        <svg class="card-landscape" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,140 Q100,90 200,120 Q300,150 400,100 L400,220 L0,220Z" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+      </div>
+      <div class="dest-overlay">
+        <div class="dest-state">Mizoram</div>
+        <div class="dest-name">Land of the<br>Highlanders</div>
+        <div class="dest-desc">Phawngpui Peak, Palak Lake, vibrant Mizo culture and stunning bamboo forests.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- WHY DHANSIRI -->
+<section class="why" id="about">
+  <div class="why-inner">
+    <div>
+      <div class="section-label" style="color:var(--gold)">Why Choose Us</div>
+      <h2 class="section-title">Travel Crafted With <em>Heart & Soul</em></h2>
+      <p class="why-text">Born on the banks of the Dhansiri river, we understand Northeast India like no one else. We go beyond sightseeing — we connect you with ancient cultures, pristine wilderness, and memories that last a lifetime.</p>
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-icon">🧭</div>
+          <div class="why-feature-text">
+            <h4>Local Expert Guides</h4>
+            <p>Our guides are native Northeast Indians who share authentic stories, languages, and hospitality at every step.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">🎒</div>
+          <div class="why-feature-text">
+            <h4>Fully Customised Itineraries</h4>
+            <p>Every journey is tailored to your pace, interests and budget — no cookie-cutter packages.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">🌿</div>
+          <div class="why-feature-text">
+            <h4>Responsible Tourism</h4>
+            <p>We support local communities, conserve wildlife habitats, and promote eco-conscious travel.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-icon">📞</div>
+          <div class="why-feature-text">
+            <h4>24/7 On-Ground Support</h4>
+            <p>Travel with confidence knowing our team is always available to assist you throughout your journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div style="position:relative;">
+        <div class="why-card-main">
+          <h3>What You'll Experience</h3>
+          <p style="color:rgba(240,235,224,0.65);font-size:0.9rem;line-height:1.65;">From the thundering roar of one-horned rhinos in Kaziranga to the silence of Tawang Monastery at dawn — every moment is curated to move your soul.</p>
+          <div class="tag-row">
+            <span class="tag">Wildlife Safaris</span>
+            <span class="tag">Tribal Culture</span>
+            <span class="tag">River Cruises</span>
+            <span class="tag">Monastery Visits</span>
+            <span class="tag">Trek & Camp</span>
+            <span class="tag">Tea Garden Tours</span>
+            <span class="tag">Festivals</span>
+            <span class="tag">Photography</span>
+          </div>
+        </div>
+        <div class="floating-badge">
+          <span class="big">★</span>
+          Top Rated<br>Agency
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+<div class="packages">
+  <div class="packages-header">
+    <div>
+      <div class="section-label">Tour Packages</div>
+      <h2 class="section-title">Handpicked <em>Journeys</em></h2>
+    </div>
+    <a href="#contact" class="btn-primary">Request Custom Package</a>
+  </div>
+  <div class="pkg-grid">
+
+    <div class="pkg-card">
+      <div class="pkg-header pkg-assam">
+        <span class="pkg-duration">7 Days</span>
+        <div class="pkg-state">Assam</div>
+        <div class="pkg-name">Kaziranga &<br>Brahmaputra Trail</div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-highlights">
+          <li>Kaziranga National Park jeep & elephant safari</li>
+          <li>River cruise on the Brahmaputra</li>
+          <li>Majuli Island cultural experience</li>
+          <li>Heritage tea estate tour & tasting</li>
+        </ul>
+        <div class="pkg-footer">
+          <div class="pkg-price">₹28,000 <span>/ person</span></div>
+          <a href="#contact" class="btn-pkg">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-header pkg-meghalaya">
+        <span class="pkg-duration">5 Days</span>
+        <div class="pkg-state">Meghalaya</div>
+        <div class="pkg-name">Clouds & Living<br>Root Bridges</div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-highlights">
+          <li>Double decker living root bridge trek</li>
+          <li>Nohkalikai Falls & Seven Sisters Falls</li>
+          <li>Dawki crystal-clear river boat ride</li>
+          <li>Shillong city & Umiam Lake</li>
+        </ul>
+        <div class="pkg-footer">
+          <div class="pkg-price">₹22,000 <span>/ person</span></div>
+          <a href="#contact" class="btn-pkg">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-header pkg-arunachal">
+        <span class="pkg-duration">8 Days</span>
+        <div class="pkg-state">Arunachal Pradesh</div>
+        <div class="pkg-name">Tawang &<br>Sela Pass Odyssey</div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-highlights">
+          <li>Tawang Monastery — Asia's largest</li>
+          <li>Sela Pass at 13,700 ft altitude</li>
+          <li>Nuranang (Jung) Waterfall</li>
+          <li>Ziro Valley cultural immersion</li>
+        </ul>
+        <div class="pkg-footer">
+          <div class="pkg-price">₹35,000 <span>/ person</span></div>
+          <a href="#contact" class="btn-pkg">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-header pkg-nagaland">
+        <span class="pkg-duration">6 Days</span>
+        <div class="pkg-state">Nagaland</div>
+        <div class="pkg-name">Hornbill Festival<br>& Dzükou Valley</div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-highlights">
+          <li>Hornbill Festival of Naga tribes</li>
+          <li>Dzükou Valley flower trek</li>
+          <li>Kohima War Cemetery</li>
+          <li>Authentic Naga village homestay</li>
+        </ul>
+        <div class="pkg-footer">
+          <div class="pkg-price">₹26,000 <span>/ person</span></div>
+          <a href="#contact" class="btn-pkg">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-header pkg-sikkim">
+        <span class="pkg-duration">7 Days</span>
+        <div class="pkg-state">Sikkim</div>
+        <div class="pkg-name">Kangchenjunga<br>Panorama Tour</div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-highlights">
+          <li>Sunrise at Tiger Hill & Gangtok</li>
+          <li>Tsomgo Lake & Nathula Pass</li>
+          <li>Rumtek & Pemayangtse Monasteries</li>
+          <li>Yumthang Valley rhododendrons</li>
+        </ul>
+        <div class="pkg-footer">
+          <div class="pkg-price">₹30,000 <span>/ person</span></div>
+          <a href="#contact" class="btn-pkg">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-header pkg-mizoram">
+        <span class="pkg-duration">5 Days</span>
+        <div class="pkg-state">Mizoram</div>
+        <div class="pkg-name">Blue Mountains<br>Escape</div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-highlights">
+          <li>Phawngpui "Blue Mountain" trek</li>
+          <li>Palak Dil, Mizoram's largest lake</li>
+          <li>Aizawl city & Durtlang Hills</li>
+          <li>Mizo village weaving demonstrations</li>
+        </ul>
+        <div class="pkg-footer">
+          <div class="pkg-price">₹24,000 <span>/ person</span></div>
+          <a href="#contact" class="btn-pkg">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+<div class="testimonials-inner">
+  <div class="testi-header">
+    <div class="section-label" style="justify-content:center">Traveller Stories</div>
+    <h2 class="section-title" style="text-align:center">Words from Our <em>Wanderers</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Dhansiri Insight turned our Assam trip into a dream. The rhino safari at Kaziranga and the Brahmaputra cruise were beyond words. Our guide knew every corner like home.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rahul Sharma</div>
+          <div class="testi-place">Delhi, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The Meghalaya package was simply magical. Standing on the living root bridge with mist all around was one of the most ethereal experiences of my life. Absolutely flawless planning!</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:linear-gradient(135deg,#6b3a5a,#2d5a8b)">P</div>
+        <div>
+          <div class="testi-name">Priya Menon</div>
+          <div class="testi-place">Bengaluru, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Tawang at dawn, with snow on the peaks and monks chanting — I will carry that memory forever. Dhansiri Insight handled every detail beautifully. Already planning my Nagaland trip!</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:linear-gradient(135deg,#8b6a20,#3a8b3a)">A</div>
+        <div>
+          <div class="testi-name">Arnav Das</div>
+          <div class="testi-place">Kolkata, India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="contact-inner">
+  <div>
+    <div class="section-label" style="color:var(--gold)">Get In Touch</div>
+    <h2 class="section-title">Let's Plan Your<br><em>Dream Journey</em></h2>
+    <div class="contact-info">
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <p>Our Office</p>
+          <p>Guwahati, Assam, Northeast India</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <p>Phone / WhatsApp</p>
+          <p>+91 94350 XXXXX</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">✉️</div>
+        <div class="info-text">
+          <p>Email</p>
+          <p>hello@dhansiriinsight.com</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🕐</div>
+        <div class="info-text">
+          <p>Working Hours</p>
+          <p>Mon–Sat: 9 AM – 7 PM IST</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@email.com">
+      </div>
+      <div class="form-group">
+        <label>Destination of Interest</label>
+        <select>
+          <option value="">Select a state...</option>
+          <option>Assam</option>
+          <option>Meghalaya</option>
+          <option>Mizoram</option>
+          <option>Nagaland</option>
+          <option>Sikkim</option>
+          <option>Arunachal Pradesh</option>
+          <option>Multi-State Tour</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Travel Month</label>
+          <select>
+            <option>January</option><option>February</option><option>March</option>
+            <option>April</option><option>May</option><option>June</option>
+            <option>July</option><option>August</option><option>September</option>
+            <option>October</option><option>November</option><option>December</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>No. of Travellers</label>
+          <input type="number" placeholder="e.g. 2" min="1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea placeholder="Tell us about your travel dreams, preferences, or questions..."></textarea>
+      </div>
+      <button class="btn-submit">Send My Enquiry →</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    Dhansiri Insight
+    <span>Northeast India Travel</span>
+  </div>
+  <div class="footer-copy">© 2025 Dhansiri Insight. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+  </div>
+</footer>
+
+<script>
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.dest-card, .pkg-card, .testi-card, .why-feature').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Form submit
+  document.querySelector('.btn-submit').addEventListener('click', function() {
+    this.textContent = '✓ Enquiry Sent! We will contact you soon.';
+    this.style.background = 'var(--sage)';
+    setTimeout(() => {
+      this.textContent = 'Send My Enquiry →';
+      this.style.background = 'var(--gold)';
+    }, 4000);
+  });
+</script>
+
+</body>
+</html>
